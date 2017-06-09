@@ -7,4 +7,4 @@
     * run python permutations.py
 
 # requirements
-    * python3
+    * python ^3.5
