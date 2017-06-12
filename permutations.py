@@ -1,5 +1,6 @@
 
 class Permutations:
+    my_string = input("please enter a string")
 
     def find_permutations(self, my_string):
         """Return all possible permutations of given string"""
@@ -18,4 +19,4 @@ class Permutations:
         print(variations)
         return variations
 
-Permutations().find_permutations("hello")
+Permutations().find_permutations()
