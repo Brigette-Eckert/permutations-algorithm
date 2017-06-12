@@ -1,15 +1,20 @@
+
 class Permutations:
 
     def find_permutations(self, user_str):
         """Return all possible permutations of given string"""
-        permutations = []
-        print(user_str)
-        print(user_str[0])
-        # loop over string
-        # start with keeping i same and shifting other parts over - change i
-        # user_str[0] + user_str[1] - user_str[n]
-        # re- run with shifted user string- shift first letter to last?
-        # if not in permutations - add to list
-        permutations.sort()
-        print(permutations)
-        return permutations
+        if len(user_str)<=1:
+            return [user_str]
+
+        perms = self.find_permutations(user_str[1:])
+        char = user_str[0]
+        variations = []
+        for perm in perms:
+            # insert the character into every possible location
+            for i in range(len(perm) + 1):
+                variations.append(perm[:i] + char + perm[i:])
+
+        variations.sort()
+        print(variations)
+        return variations
+
