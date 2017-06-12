@@ -1,13 +1,13 @@
 
 class Permutations:
 
-    def find_permutations(self, user_str):
+    def find_permutations(self, my_string):
         """Return all possible permutations of given string"""
-        if len(user_str)<=1:
-            return [user_str]
+        if len(my_string)<=1:
+            return [my_string]
 
-        perms = self.find_permutations(user_str[1:])
-        char = user_str[0]
+        perms = self.find_permutations(my_string[1:])
+        char = my_string[0]
         variations = []
         for perm in perms:
             # insert the character into every possible location
@@ -18,3 +18,4 @@ class Permutations:
         print(variations)
         return variations
 
+Permutations().find_permutations("hello")
