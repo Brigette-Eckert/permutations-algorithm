@@ -13,7 +13,8 @@ class Permutations:
         for perm in perms:
             # insert the character into every possible location
             for i in range(len(perm) + 1):
-                variations.append(perm[:i] + char + perm[i:])
+                if (perm[:i] + char + perm[i:]) not in variations:
+                    variations.append(perm[:i] + char + perm[i:])
 
         variations.sort()
         print(variations)
